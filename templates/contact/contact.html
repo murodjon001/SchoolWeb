@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Contact Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Biz bilan aloqa</h5>
+                <h1>Shikoyat taklif va murojaatlaringizni bizga yuboring</h1>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact-form bg-secondary rounded p-5">
+                        <div id="success"></div>
+                        <form action="" method="POST">{% csrf_token %} 
+                            <div class="control-group">
+                                <input type="text" class="form-control border-0 p-4" name='name' placeholder="Ism Familyangiz" required="name" data-validation-required-message="Iltimos Ism Familya kiriting" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <input type="text" class="form-control border-0 p-4" name='phone' placeholder="Telefon Raqamingiz" required="phone" data-validation-required-message="Iltimos telefon raqam kiriting" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <textarea class="form-control border-0 py-3 px-4" rows="5" name='text' placeholder="Murojaat kiriting!" required="text" data-validation-required-message="Iltimos murojaatingizni qoldiring"></textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="text-center">
+                                <button onclick=myFunction() class="btn btn-primary py-3 px-5" type="submit" id="sendMessageButton">Xabarni Yuborish</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+    <script>
+        function myFunction() {
+            alert('Xabaringiz yuborildi!');
+        }
+    </script>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends '../base.html' %}
+{% load static %}
+{% block content %}
+ {% comment %} <!-- Detail Start -->
+ <div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="mb-5">
+                    
+                    <h1 class="mb-5">{{ category.category_name }}</h1>
+                    {% for post in post %}
+                    {% if category.category_name == post.category.category_name %}
+                    <div class="row">   
+                        <div class="col-md-6 col-lg-3 text-center team mb-4">
+                            <div class="team-item rounded overflow-hidden mb-2">
+                                <div class="team-img position-relative">
+                                    <img class="img" src="{{ post.photo.url }}" alt="Chiqmadi">
+                                </div>
+                                <div class="bg-secondary p-4">
+                                    <h5><a >{{post.title}}</a></h5>
+                                </div>
+                            </div>
+                        </div>                              
+                    {% else %}
+                        <h1 class="mb-5">Bu mavzuda e'lon yoki maqola yo'q!</h1>
+
+
+                    {% endif %}
+                    {% endfor %} 
+                </div>
+ {% endcomment %}
+
+    <!-- Blog Start -->
+    <div class="container-fluid py-5">
+        <div class="container pt-5 pb-3">
+            <div class="text-center mb-5">
+                <h1>{{category.category_name}}</h1>
+            </div>
+            <div class="text-center mb-5">
+            <div class="row">
+                    <div class="row pb-3">
+                        {% for post in post %}
+                        {% if category.category_name == post.category.category_name %} 
+                        <div class="col-lg-6 mb-4">
+                           
+                            <div class="blog-item position-relative overflow-hidden rounded mb-2">
+                                <div class="team-img position-relative">
+                                    <img class="img-fluid" src="{{ post.photo.url }}" alt="">
+                                    <a class="blog-overlay text-decoration-none" href="{% url 'news:post_details' post.id %}">
+                                        <h5 class="text-white mb-3">{{post.title}}</h5>
+                                        <p class="text-primary m-0">{{post.data_created}}</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>  
+                        {% endif %}
+                        {% endfor %} 
+                        {% if category.category_name != post.category.category_name  %}
+                        <div class="text-center">
+                            <h1 class="mb-5">Bu mavzuda e'lon yoki maqola yo'q!</h1>
+                        </div>
+                        {% endif %}  
+                    </div>
+                </div>
+            </div>
+    </div>
+                    
+    
+                   
+    
+                  
+    <!-- Blog End -->
+             
+               
+
+
+
+{% endblock %}

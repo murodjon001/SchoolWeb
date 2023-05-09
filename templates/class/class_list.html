@@ -1,0 +1,25 @@
+{% extends '../base.html' %}
+
+{% block content %}
+ <!-- Detail Start -->
+ <div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="mb-5">
+                    {% for class in class %}
+                    <h1 class="mb-5">{{ class.group_NumberLetter }}</h1>
+                    <h5>Sinf haqida ma'lumot:</h5>
+                    <p> {{class.description }} </p>
+                    
+                    <h5> Sinf rahbari: {{class.class_curator.name}} </h5>
+                    <h5> O'qituvchining telefon raqami: {{class.class_curator.phone}} </h5>
+
+
+                </div>
+                {% endfor %}
+
+             
+               
+<!-- Detail End -->
+{% endblock %}

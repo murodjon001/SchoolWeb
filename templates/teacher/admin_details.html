@@ -1,0 +1,26 @@
+{% extends '../base.html' %}
+
+{% block content %}
+ <!-- Detail Start -->
+ <div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="mb-5">
+
+                    <h6 class="text-primary mb-3">{{ admin.created }}</h6>
+                    <h1 class="mb-5">{{ admin.name }}</h1>
+                    <img class="img-fluid rounded w-100 mb-4"  src="{{ admin.photo.url }}"  alt="Image">                    
+                    <p> {{ admin.description }} </p>
+                    {% if admin.position %}
+                    <h5>O'qituvchining maktabdagi lavozimi: {{ admin.position.position }}
+                    {% endif %}
+                    <h5> O'qituvchining telefon raqami: {{ admin.phone }} </h5>
+                    <h5> O'qituvchining mutaxassisligi: {{ admin.science.science_name }} fani o'qituvchisi</h5>
+
+                </div>
+
+             
+               
+<!-- Detail End -->
+{% endblock %}
