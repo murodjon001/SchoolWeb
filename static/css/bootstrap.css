@@ -6304,6 +6304,9 @@ button.bg-primary:focus {
 .bg-secondary {
   background-color: #6c757d !important;
 }
+.bg-secondary h5 a{
+  color:red !important;
+}
 
 a.bg-secondary:hover, a.bg-secondary:focus,
 button.bg-secondary:hover,

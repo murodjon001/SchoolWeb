@@ -11,3 +11,8 @@ def category_list(request, pk):
 def post_details(request, pk):
     post = get_object_or_404(Post, id=pk)
     return render(request, 'news/post_details.html', {"post": post})
+
+def all_post(request):
+    all_post = Post.objects.all().order_by('-data_created')
+
+    return render(request, 'news/all_post.html', {'all_post': all_post})

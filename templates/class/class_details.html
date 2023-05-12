@@ -1,0 +1,22 @@
+{% extends '../base.html' %}
+{% block content %}
+<!-- Detail Start -->
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="mb-5">
+
+                    <h1 class="mb-5">{{ group.group_NumberLetter}}</h1>
+                    {% if group.photo %}
+                    <img class="img-fluid rounded w-100 mb-4"  src="{{ group.photo.url }}"  alt="Image">                    
+                    {% endif %}
+                    <p> {{ group.description }} </p>
+                    <h5> Sinf rahbari: {{group.class_curator.name}} </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Detail End -->
+{% endblock %}

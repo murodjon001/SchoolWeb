@@ -13,6 +13,7 @@ class Group(models.Model):
         on_delete=models.RESTRICT,
         verbose_name="Sinf rahbari"
         )
+    photo = models.ImageField(null=True, blank=True, upload_to='media')
     description = models.TextField(blank=True,verbose_name="Sinf haqida ma'lumot")
     created = models.DateField(auto_now_add=True)
 

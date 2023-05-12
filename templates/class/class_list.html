@@ -9,17 +9,15 @@
                 <div class="mb-5">
                     {% for class in class %}
                     <h1 class="mb-5">{{ class.group_NumberLetter }}</h1>
-                    <h5>Sinf haqida ma'lumot:</h5>
-                    <p> {{class.description }} </p>
-                    
-                    <h5> Sinf rahbari: {{class.class_curator.name}} </h5>
-                    <h5> O'qituvchining telefon raqami: {{class.class_curator.phone}} </h5>
-
-
+                    <h5><a href="{% url 'class:group_details' class.id %}"> Sinf haqida ma'lumot</a></h5>
+                    <h5> Sinf rahbari: <a href="{% url 'school:teacher_details' class.class_curator.id %}" >{{class.class_curator.name}} </a></h5>
+                    <h5> O'qituvchining telefon raqami: {{class.class_curator.phone}} </h5></br></br>
+                    {% endfor %}
                 </div>
-                {% endfor %}
-
-             
-               
+            </div>    
+        </div>
+    </div>
+</div>
+        
 <!-- Detail End -->
 {% endblock %}

@@ -4,29 +4,27 @@
 
 <div class="container-fluid py-5">
     <div class="container pt-5 pb-3">
-        <div class="text-center mb-5">
-            <h1>Maktabimiz rahbariyati</h1>
-        </div>
+            <div class="text-center mb-5">
+                <h1>Maktabimiz rahbariyati</h1>
+            </div>
         
         <div class="row">      
             {% for admin in admin %}   
            
             <div class="col-md-6 col-lg-3 text-center team mb-4">
                 <div class="team-item rounded overflow-hidden mb-2">
-                    <div class="team-img position-relative">
-                        <img class="img-fluid" src="{{ admin.photo.url }}" alt="Chiqmadi">
-                    </div>
+                        <div class="team-img position-relative">
+                            <img class="img-fluid" src="{{ admin.photo.url }}" alt="Chiqmadi">
+                        </div>
                     <div class="bg-secondary p-4">
                         <h5><a href="{% url 'school:admin_details' admin.id %}" >{{admin.name}}</a></h5>
-                        {% if admin.science.science_name %}
-                        <p class="m-0">{{admin.science.science_name}}</p>
-                        {% endif %}
                     </div>
                 </div>
-            </div>   
-                
-            {% endfor %}  
+            </div>
+            {% endfor %}     
         </div>
+    </div>
+</div>
        
 
 

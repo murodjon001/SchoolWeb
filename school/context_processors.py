@@ -7,6 +7,7 @@ def teachers(request):
     director = SchoolAdministration.objects.filter(position__position = "Direktor")
     category = Category.objects.all()
     post = Post.objects.all()
+    post_home = Post.objects.all().order_by('-data_created')[:4]
 
     return{
         # 'teachers': Teacher.objects.all,
@@ -15,5 +16,5 @@ def teachers(request):
         'science' : science,
         'categories': category,
         'post': post,
-
+        'post_h': post_home,
     }
